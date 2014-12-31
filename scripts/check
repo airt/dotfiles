@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+diff --color=always -ru files "$HOME" | grep -v '^Only in /'

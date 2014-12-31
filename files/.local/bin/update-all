@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+set -ex
+command -v brew && brew update && brew outdated && brew upgrade && brew upgrade --cask
+command -v tldr && tldr --update &
+command -v rustup && rustup update &
+command -v upgrade_oh_my_zsh && upgrade_oh_my_zsh &
+command -v update-bt-trackers && update-bt-trackers &
+command -v conda && conda update --all --quiet --yes &
+command -v yarn && yarn global upgrade --latest --silent &
+wait
+command -v brew && brew cleanup &
+command -v conda && conda clean --all --quiet --yes &
+wait

@@ -1,0 +1,15 @@
+# https://docs.haskellstack.org/en/stable/yaml_configuration/
+# https://mirrors.tuna.tsinghua.edu.cn/help/hackage/
+# https://mirrors.tuna.tsinghua.edu.cn/help/stackage/
+
+package-indices:
+- name: Tsinghua
+  download-prefix: https://mirrors.tuna.tsinghua.edu.cn/hackage/package/
+  http: https://mirrors.tuna.tsinghua.edu.cn/hackage/00-index.tar.gz
+
+setup-info: https://mirrors.tuna.tsinghua.edu.cn/stackage/stack-setup.yaml
+
+urls:
+  latest-snapshot: https://mirrors.tuna.tsinghua.edu.cn/stackage/snapshots.json
+  lts-build-plans: https://mirrors.tuna.tsinghua.edu.cn/stackage/lts-haskell/
+  nightly-build-plans: https://mirrors.tuna.tsinghua.edu.cn/stackage/stackage-nightly/

@@ -1,0 +1,8 @@
+[user]
+  name = airt
+  email = airtial@gmail.com
+[core]
+  excludesfile = ~/.gitignore-global
+  editor = vim
+[log]
+  date = iso
