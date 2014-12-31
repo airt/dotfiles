@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+QF=('cat')
+QD=('exa' '-al')
+
+case $# in
+0) q . ;;
+1) if [[ -d "$1" ]]; then "${QD[@]}" "$1"; else "${QF[@]}" "$1"; fi ;;
+*) for x in "$@"; do q "$x"; done ;;
+esac
