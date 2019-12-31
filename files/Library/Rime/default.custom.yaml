@@ -1,0 +1,11 @@
+patch:
+  schema_list:
+    - schema: double_pinyin
+  switcher/hotkeys:
+    - Control+Shift+grave
+  menu/page_size: 9
+  ascii_composer/switch_key:
+    Shift_L: noop
+    Shift_R: noop
+    Control_L: noop
+    Control_R: noop
