@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+set -ex
+
+command -v brew && brew update && brew outdated && brew upgrade && brew upgrade --cask
+command -v omz && omz update
+command -v rustup && rustup update &
+command -v tldr && tldr --update &
+wait
+command -v brew && brew cleanup &
+wait

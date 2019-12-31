@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+set -ex
+
+read -r -p "install files [y/n] "; if [[ ! $REPLY =~ ^[y]$ ]]; then exit; fi
+
+cp -r -n files/. "$HOME" || true
+
+read -r -p "install lists [y/n] "; if [[ ! $REPLY =~ ^[y]$ ]]; then exit; fi
+
+brew tap homebrew/cask-fonts
+
+for x in $(<lists/macos/brew); do
+  brew install "$x"
+done
+
+for x in $(<lists/macos/cask); do
+  brew install --cask "$x"
+done
+
+for x in $(<lists/macos/font); do
+  brew install --cask "$x"
+done
+
+for x in $(<lists/vscode/extension); do
+  code --install-extension "$x"
+done

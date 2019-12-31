@@ -1,0 +1,15 @@
+[core]
+  editor = vim
+  excludesfile = ~/.gitignore.global
+[log]
+  date = iso
+[push]
+  default = current
+[pull]
+  rebase = true
+[fetch]
+  prune = true
+[rebase]
+  autoStash = true
+[include]
+  path = ~/.gitconfig.local
