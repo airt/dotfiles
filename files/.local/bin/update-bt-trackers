@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+set -ex
+
+ARIA2_CONF=$HOME/.aria2/aria2.conf
+[[ ! -e $ARIA2_CONF ]] && touch "$ARIA2_CONF"
+[[ ! -w $ARIA2_CONF ]] && exit 255
+
+TRACKERS_SOURCE=https://raw.githubusercontent.com/ngosang/trackerslist/master/trackers_best_ip.txt
+TRACKERS=$(curl -s $TRACKERS_SOURCE | grep . | paste -s -d ',' -)
+[[ -z $TRACKERS ]] && exit 1
+
+grep -q "^bt-tracker=" "$ARIA2_CONF" || echo "bt-tracker=" >>"$ARIA2_CONF"
+sed -i.b "s#^bt-tracker=.*#bt-tracker=$TRACKERS#g" "$ARIA2_CONF"
